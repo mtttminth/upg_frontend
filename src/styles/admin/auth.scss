@@ -1,0 +1,15 @@
+@import "../variables";
+@import "../mixins";
+
+.form-label {
+  color: $white;
+  margin-bottom: 10px;
+}
+.textfield .MuiInputBase-input {
+  color: $white !important;
+  // background: #ffffff26;
+}
+.mui-1hvmgm5-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root.Mui-disabled {
+  color: $white !important;
+  background: $secondary !important;
+}

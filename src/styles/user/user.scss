@@ -1,0 +1,311 @@
+@import "../variables";
+@import "../mixins";
+
+@font-face {
+  font-family: 'Balthazar';
+  src: url('../../../public/fonts/Balthazar/Balthazar-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+.mui-hyum1k-MuiToolbar-root {
+  z-index: 999 !important;
+}
+.pdf-viewer {
+  margin-top: -58px;
+}
+
+table, th, td {
+  border: 1px solid #bababa;
+}
+td {
+  align-content: center;
+}
+
+.banner-text {
+  font-family: "Balthazar" !important;
+}
+
+// Nav
+.user-nav header {
+  box-shadow: none !important;
+  // padding-right: 20px;
+}
+
+.logo-box {
+  background: #fff;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  padding-inline: 35px;
+  border-right: 20px solid #EC008C;
+}
+
+.logo-box img {
+  margin-top: 3px;
+}
+
+.user-nav-active {
+  border-bottom: 1px solid;
+}
+
+.nav-menu:hover,
+.user-side .nav-menu:hover {
+  color: #EC008C;
+}
+
+.user-side .user-nav-active {
+  border-bottom: none;
+  background-color: rgba(255, 255, 255, 0.192);
+}
+
+// Footer
+.footer-container {
+  background-color: $footer;
+  color: $white;
+}
+
+.social-icon {
+  border-radius: 50px;
+  width: 33px;
+  height: 33px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.facebook {
+  background-color: #1877F2;
+}
+
+.youtube {
+  background-color: #FF0000;
+}
+
+.mail {
+  background-color: #332FD0;
+}
+
+.web {
+  background-color: #457B9D;
+}
+
+.viber {
+  background-color: #7360f2;
+}
+
+.content-title {
+  color: $footer;
+}
+
+.view-all {
+  display: flex;
+  align-items: center;
+}
+
+.view-all .MuiSvgIcon-root {
+  color: $footer;
+  margin-left: 5px;
+}
+
+// Release
+.release-card {
+  background-color: $footer !important;
+  color: $white !important;
+}
+
+.release-preview-img {
+  height: 250px;
+  object-fit: contain;
+}
+
+// Resource 
+.resource-container {
+  background-color: #abe1fa;
+  position: relative;
+  margin-block: 10px;
+}
+
+.resource-icon {
+  position: absolute;
+  left: -25px;
+}
+
+.resource-detail-button {
+  height: 40px;
+  text-transform: capitalize !important;
+}
+
+// Dashboard
+.dashboard-container {
+  background-color: $footer;
+  color: $white !important;
+}
+
+.overview-divider {
+  border-bottom: 2px solid #ffffff6e !important;
+  width: 50px;
+  margin-block: 8px !important;
+}
+
+// Flip Card 
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  aspect-ratio: 1;
+  perspective: 1000px;
+  color: $white;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  text-transform: uppercase;
+}
+
+.flip-card-back {
+  background-color: #2980b9;
+  transform: rotateY(180deg);
+}
+
+.quality .flip-card-front {
+  background-image: url('../../../public/images/quality.jpg');
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+.quality .flip-card-back {
+  background-color: #0b4358;
+}
+
+.environment .flip-card-front {
+  background-image: url('../../../public/images/environment.jpg');
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+.environment .flip-card-back {
+  background-color: #1d8c72;
+}
+.sustainability .flip-card-front {
+  background-image: url('../../../public/images/sustainability.jpg');
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+.sustainability .flip-card-back {
+  background-color: #a6ce39;
+}
+.occupation .flip-card-front {
+  background-image: url('../../../public/images/occupation.jpg');
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+.occupation .flip-card-back {
+  background-color: #ffd51a;
+}
+.mui-12qrt7t {
+  z-index: 999;
+}
+// Resources Page
+.subtitle-container {
+  background-image: url('../../../public/images/background.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100px;
+  z-index: 999;
+  position: relative;
+
+  @include responsive(768px) {
+    height: 140px;
+  }
+}
+.subtitle-container h6 {
+  text-shadow: 2px 2px 4px #ffffff;
+}
+.tab-container {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  column-gap: 30px;
+  z-index: 999;
+
+  @include responsive(768px) {
+    column-gap: 10px;
+  }
+}
+
+.tab-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  background-color: #fff;
+  box-shadow: 3px 5px 10px 2px #cbcbcb;
+  border-radius: 7px;
+  width: 200px;
+  padding: 15px 0;
+
+  @include responsive(768px) {
+    width: 100px;
+  }
+}
+
+.active .tab-item {
+  box-shadow: 3px 5px 10px 2px #212D64;
+}
+
+.cat-filter-active {
+  background-color: #bcbcbc33 !important;
+  border-radius: 3px !important;
+}
+
+.tab-item img {
+  width: 80px !important;
+
+  @include responsive(768px) {
+    width: 50px !important;
+  }
+}
+
+.tab-item p {
+  @include responsive(768px) {
+    font-size: 16px !important;
+  }
+}
+.image-gallery-fullscreen-button .image-gallery-svg, .image-gallery-play-button .image-gallery-svg {
+  color: #000000 !important;
+}

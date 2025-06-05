@@ -1,0 +1,72 @@
+@import "../variables";
+@import "../mixins";
+@import "../admin/auth";
+
+p, span {
+  font-size: $text-size;
+}
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.mui-fa7agg-MuiTypography-root {
+  font-size: 16px !important;
+}
+
+.active {
+  background-color: rgba(255, 255, 255, 0.192);
+}
+
+.logo {
+  width: 170px;
+  height: auto;
+  @include responsive($size-mobile) {
+    width: 130px;
+  }
+}
+.footerlogo {
+  width: 120px;
+  height: auto;
+  @include responsive($size-mobile) {
+    width: 90px;
+  }
+}
+
+.MuiChip-root {
+  border-radius: 8px !important;
+  font-size: 13px !important;
+}
+
+.subtitle-underline {
+  width: 37px;
+  border: 2px solid $grey;
+}
+
+.selectTable {
+  .MuiTable-root {
+    border-collapse: separate !important;
+    border-spacing: 0 7px !important;
+  }
+  .MuiTableCell-root {
+    border-bottom: 0 !important;
+  }
+  .subSelectTable {
+    .MuiTable-root {
+      border-collapse: collapse !important;
+    }
+    .MuiTableCell-root{
+      border-bottom: 1px solid $grey !important;
+    }
+  }
+}
+
+.multi-select legend span {
+  display: none !important;
+}
+
+.MuiDataGrid-virtualScroller {
+  min-height: 60px !important;
+}
