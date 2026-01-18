@@ -7,7 +7,8 @@ import {
   Modal,
   Skeleton,
 } from "@mui/material";
-import ImageGallery from "react-image-gallery";
+import ReactImageGallery from "react-image-gallery";
+const ImageGallery = ReactImageGallery as unknown as React.ComponentType<any>;
 import "react-image-gallery/styles/css/image-gallery.css";
 import { AppDispatch, RootState } from "@/store/store";
 import { fetchReleaseDetail } from "@/store/thunks/user/releaseThunk";
