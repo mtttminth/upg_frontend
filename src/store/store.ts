@@ -1,5 +1,5 @@
 "use client";
-import { combineReducers, configureStore  } from "@reduxjs/toolkit";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import authReducer from "./slices/admin/authSlice";
 import groupReducer from "./slices/admin/groupSlice";
 import departmentReducer from "./slices/admin/departmentSlice";
@@ -22,6 +22,7 @@ import bannerReducer from "./slices/admin/bannerSlice";
 import profileReducer from "./slices/admin/profileSlice";
 import userContractReducer from "./slices/user/contractSlice";
 import userFormReducer from "./slices/user/formSlice";
+import chatReducer from "./slices/user/chatSlice";
 
 const rootReducer = combineReducers({
   // Admin Side
@@ -49,7 +50,8 @@ const rootReducer = combineReducers({
   userForm: userFormReducer,
   userRelease: userReleaseReducer,
   userLeave: userLeaveReducer,
-},);
+  chat: chatReducer,
+});
 
 export const store = configureStore({
   reducer: rootReducer,

@@ -23,14 +23,9 @@ const ResourceDetail = ({ params }: { params: PageParams }) => {
   const { loading, resourceDetail } = useSelector(
     (state: RootState) => state.userResource
   );
-  const [checkedFile, setCheckedFile] = useState<string>();
-  // For File
-  const file: any[] | any = resourceDetail;
-  useEffect(() => {
-    if (!file.length) {
-      setCheckedFile(file.file);
-    }
-  }, [resourceDetail]);
+  const iframeSrc = resourceDetail.file
+    ? resourceDetail.file
+    : resourceDetail.video_url;
   const id = parseInt(params.id);
   const [numPages, setNumPages] = useState<number>(0);
   const [pageNumber, setPageNumber] = useState<number>(1); // start on first page
@@ -86,7 +81,7 @@ const ResourceDetail = ({ params }: { params: PageParams }) => {
           <iframe
             width="100%"
             height={1000}
-            src={checkedFile}
+            src={iframeSrc}
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen

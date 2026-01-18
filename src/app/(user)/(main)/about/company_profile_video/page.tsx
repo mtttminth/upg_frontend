@@ -4,7 +4,7 @@ import { fetchCompanyProfileVideo } from "@/store/thunks/user/aboutThunk";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Skeleton, Box, Fab } from "@mui/material";
-import LanguageIcon from "@mui/icons-material/Language";
+import LanguageIcon from '@mui/icons-material/Language';
 import Link from "next/link";
 
 const CompanyProfileVideo = () => {
@@ -63,21 +63,20 @@ const CompanyProfileVideo = () => {
           <Box
             sx={{ position: "absolute", right: "1.2rem", marginTop: "6rem" }}
           >
-            <Link href="#">
+            <Link href="https://www.upgpaint.com/" target="_blank">
               <Fab
                 size="medium"
                 variant="extended"
                 sx={{
-                  color: "#ffffff",
-                  backgroundColor: "#ec008c",
+                  color: "#ffffff", backgroundColor: "#ec008c",
                   "&:hover": {
                     backgroundColor: "#031a72",
                   },
                 }}
                 aria-label="add"
               >
-                <LanguageIcon sx={{ marginRight: "4px" }} />
-                Fake Label
+                <LanguageIcon sx={{ marginRight: "4px"}}/>
+                UPG Paint
               </Fab>
             </Link>
           </Box>

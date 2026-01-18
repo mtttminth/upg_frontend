@@ -1,0 +1,108 @@
+===============================================
+  CPANEL DEPLOYMENT QUICK CHECKLIST
+  Shwe Su Frontend - Next.js SSR Project
+===============================================
+
+PREPARATION (COMPLETED ✓)
+-------------------------
+✓ Converted from Yarn to npm
+✓ Ran: npm install --legacy-peer-deps
+✓ Updated next.config.ts with output: 'standalone'
+✓ Built project: npm run build
+✓ Created deploy folder with all files
+✓ Created server.js
+✓ Created .htaccess
+
+
+DEPLOYMENT STEPS (DO THESE IN CPANEL)
+--------------------------------------
+
+□ STEP 1: Setup Node.js App in cPanel
+  - Go to "Setup Node.js App"
+  - Click "Create Application"
+  - Node.js version: 18.x or 20.x
+  - Mode: Production
+  - Application root: public_html/shwesu
+  - Startup file: server.js
+  - Click "Create"
+  
+□ STEP 2: Note your application root path
+  Example: /home/username/public_html/shwesu
+  
+□ STEP 3: Upload files via File Manager
+  - Navigate to application root
+  - Delete default files
+  - Upload ALL files from /deploy folder
+  - Wait 15-30 minutes
+  
+□ STEP 4: Edit .htaccess file
+  - Open .htaccess in File Manager
+  - Update line: PassengerAppRoot /home/YOUR_USERNAME/public_html/YOUR_FOLDER
+  - Save file
+  
+□ STEP 5: Dependencies (ALREADY DONE!)
+  - node_modules folder is ALREADY included in deploy folder
+  - Just upload it with all other files
+  - No need to run npm install in cPanel
+  - .npmrc file ensures --legacy-peer-deps if needed
+  
+□ STEP 6: Set environment variables
+  - Click "Edit" on your app
+  - Add: NODE_ENV = production
+  - Add: NEXT_PUBLIC_API_URL = https://admin.shwesu.com
+  - Add any other env vars needed
+  - Save
+  
+□ STEP 7: Restart application
+  - Click "Restart" button
+  - Wait 30-60 seconds
+  
+□ STEP 8: Test your site
+  - Open your domain in browser
+  - Check all pages work
+  - Test authentication
+  - Verify images load
+
+
+TROUBLESHOOTING QUICK FIXES
+----------------------------
+
+503 Error:
+→ Check logs: /home/username/logs/passenger.log
+→ Verify Node.js version is 18.x or higher
+→ Restart application
+
+Assets not loading:
+→ Verify .next/static/ folder uploaded
+→ Check public/ folder exists
+→ Clear browser cache
+
+npm install failed:
+→ Upload node_modules directly from local
+→ Check hosting memory limits
+
+App crashes:
+→ Check environment variables
+→ Review application logs
+→ Verify API is accessible
+
+
+IMPORTANT FILES IN DEPLOY FOLDER
+---------------------------------
+server.js         - Node.js startup file (REQUIRED)
+.htaccess         - Apache config (MUST EDIT)
+package.json      - Dependencies list
+.next/static/     - Static assets (REQUIRED)
+public/           - Public files (REQUIRED)
+node_modules/     - Dependencies (install in cPanel)
+
+
+HELP & SUPPORT
+--------------
+Full guide: See DEPLOYMENT-GUIDE.md
+Logs location: /home/username/logs/
+Check app status: cPanel > Setup Node.js App
+
+===============================================
+Good luck with your deployment! 🚀
+===============================================

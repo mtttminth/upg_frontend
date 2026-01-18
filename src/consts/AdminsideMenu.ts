@@ -108,14 +108,14 @@ export const SIDE_MENU_ITEM: SideMenu[] = [
     label: 'Banner',
     icon: 'banner.svg',
     href: 'banner',
-    permission: Permission.ANNOUNCEMENT_VIEW,
+    permission: Permission.BANNER_EDIT,
   },
   {
     type: 'item',
     label: 'About Us',
     icon: 'about.svg',
     href: 'about-us',
-    permission: Permission.ANNOUNCEMENT_VIEW,
+    permission: Permission.ABOUT_US_EDIT,
   },
 ];
 
